@@ -23,5 +23,5 @@ logging:
   level:
     com:
       course:
-        system:
+        server:
           mapper: trace
