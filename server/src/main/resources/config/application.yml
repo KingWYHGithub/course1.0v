@@ -1,0 +1,17 @@
+spring:
+#配置数据库连接
+  datasource:
+    url: jdbc:mysql://localhost:3306/course?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: course
+    password: course
+    driver-class-name: com.mysql.jdbc.Driver
+#mapper的路径
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+#优化启动日志
+logging:
+  level:
+    com:
+      course:
+        server:
+          mapper: trace
