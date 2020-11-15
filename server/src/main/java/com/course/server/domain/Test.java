@@ -1,29 +1,35 @@
 package com.course.server.domain;
 
-import lombok.Data;
-
-/**
- * ///////////////////////////////////////
- * <p>
- * 作为一个真正的程序员，首先应该尊重编程，<br/>
- * 热爱你所写下的程序，他是你的伙伴，而不是工具。
- * </p>
- * ///////////////////////////////////////
- * _____       _______   __     _______ _   _
- * |  __ \   /\|__   __|/\\ \   / /_   _| \ | |
- * | |  | | /  \  | |  /  \\ \_/ /  | | |  \| |
- * | |  | |/ /\ \ | | / /\ \\   /   | | | . ` |
- * | |__| / ____ \| |/ ____ \| |   _| |_| |\  |
- * |_____/_/    \_\_/_/    \_\_|  |_____|_| \_|
- *
- * @author :wangyuhong
- * @date : 2020/11/16 - 5:05
- */
-@Data
 public class Test {
-
     private String id;
 
     private String name;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append("]");
+        return sb.toString();
+    }
 }

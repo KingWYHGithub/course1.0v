@@ -1,29 +1,30 @@
 package com.course.server.mapper;
 
-
-
 import com.course.server.domain.Test;
-
+import com.course.server.domain.TestExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * ///////////////////////////////////////
- * <p>
- * 作为一个真正的程序员，首先应该尊重编程，<br/>
- * 热爱你所写下的程序，他是你的伙伴，而不是工具。
- * </p>
- * ///////////////////////////////////////
- * _____       _______   __     _______ _   _
- * |  __ \   /\|__   __|/\\ \   / /_   _| \ | |
- * | |  | | /  \  | |  /  \\ \_/ /  | | |  \| |
- * | |  | |/ /\ \ | | / /\ \\   /   | | | . ` |
- * | |__| / ____ \| |/ ____ \| |   _| |_| |\  |
- * |_____/_/    \_\_/_/    \_\_|  |_____|_| \_|
- *
- * @author :wangyuhong
- * @date : 2020/11/16 - 5:11
- */
 public interface TestMapper {
+    long countByExample(TestExample example);
 
-    public List<Test> list();
+    int deleteByExample(TestExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(Test record);
+
+    int insertSelective(Test record);
+
+    List<Test> selectByExample(TestExample example);
+
+    Test selectByPrimaryKey(String id);
+
+    int updateByExampleSelective(@Param("record") Test record, @Param("example") TestExample example);
+
+    int updateByExample(@Param("record") Test record, @Param("example") TestExample example);
+
+    int updateByPrimaryKeySelective(Test record);
+
+    int updateByPrimaryKey(Test record);
 }
