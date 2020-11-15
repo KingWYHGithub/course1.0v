@@ -1,12 +1,6 @@
-package com.course.system.controller;
+package com.course.system.domain;
 
-import com.course.system.domain.Test;
-import com.course.system.service.TestService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
-import java.util.List;
+import lombok.Data;
 
 /**
  * ///////////////////////////////////////
@@ -23,17 +17,13 @@ import java.util.List;
  * |_____/_/    \_\_/_/    \_\_|  |_____|_| \_|
  *
  * @author :wangyuhong
- * @date : 2020/11/15 - 3:15
+ * @date : 2020/11/16 - 5:05
  */
-@RestController
-public class TestController {
+@Data
+public class Test {
 
-    @Resource
-    private TestService testService;
+    private String id;
 
-    @RequestMapping("/test")
-    public List<Test> test(){
+    private String name;
 
-        return testService.list();
-    }
 }

@@ -1,11 +1,7 @@
-package com.course.system.controller;
+package com.course.system.mapper;
 
 import com.course.system.domain.Test;
-import com.course.system.service.TestService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,17 +19,9 @@ import java.util.List;
  * |_____/_/    \_\_/_/    \_\_|  |_____|_| \_|
  *
  * @author :wangyuhong
- * @date : 2020/11/15 - 3:15
+ * @date : 2020/11/16 - 5:11
  */
-@RestController
-public class TestController {
+public interface TestMapper {
 
-    @Resource
-    private TestService testService;
-
-    @RequestMapping("/test")
-    public List<Test> test(){
-
-        return testService.list();
-    }
+    public List<Test> list();
 }
