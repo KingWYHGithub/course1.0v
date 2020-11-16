@@ -74,9 +74,12 @@
 </template>
 
 <script>
-$('body').attr('class', 'login-layout blur-login');
 export default {
-  name: 'App',
+  name: 'login',
+  mounted: function () {
+    $('body').removeClass('no-skin');
+    $('body').attr('class', 'login-layout blur-login');
+  },
   methods: {
     login(){
       this.$router.push("/admin")
