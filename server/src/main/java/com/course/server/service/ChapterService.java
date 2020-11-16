@@ -2,10 +2,14 @@ package com.course.server.service;
 
 import com.course.server.domain.Chapter;
 import com.course.server.domain.ChapterExample;
+import com.course.server.dto.ChapterDto;
 import com.course.server.mapper.ChapterMapper;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import sun.text.resources.iw.FormatData_iw_IL;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,11 +34,17 @@ public class ChapterService {
     @Resource
     private ChapterMapper ChapterMapper;
 
-    public List<Chapter> list(){
+    public List<ChapterDto> list(){
 
         ChapterExample example=new ChapterExample();
-        example.createCriteria().andIdEqualTo("1");
-       // example.setOrderByClause("id desc");
-        return ChapterMapper.selectByExample(example);
+        List<Chapter> chaptersList = ChapterMapper.selectByExample(example);
+        List<ChapterDto> chapterDtoList = new ArrayList<>();
+        for (int i = 0,l = chaptersList.size(); i<l; i++) {
+            Chapter chapter=chaptersList.get(i);
+            ChapterDto chapterDto=new ChapterDto();
+            BeanUtils.copyProperties(chapter,chapterDto);//对象的拷贝
+            chapterDtoList.add(chapterDto);
+        }
+        return chapterDtoList;
     }
 }

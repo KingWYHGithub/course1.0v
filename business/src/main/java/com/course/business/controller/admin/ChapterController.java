@@ -1,7 +1,8 @@
-package com.course.business.controller;
+package com.course.business.controller.admin;
 
-import com.course.server.domain.Test;
-import com.course.server.service.TestService;
+import com.course.server.domain.Chapter;
+import com.course.server.dto.ChapterDto;
+import com.course.server.service.ChapterService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,14 +27,15 @@ import java.util.List;
  * @date : 2020/11/15 - 3:15
  */
 @RestController
-public class TestController {
+@RequestMapping("/admin")
+public class ChapterController {
 
     @Resource
-    private TestService testService;
+    private ChapterService ChapterService;
 
-    @RequestMapping("/test")
-    public List<Test> test(){
+    @RequestMapping("/chapter")
+    public List<ChapterDto> chapter(){
 
-        return testService.list();
+        return ChapterService.list();
     }
 }
