@@ -981,7 +981,8 @@
 export default {
   name: 'chapter',
   mounted: function () {
-    this.$parent.activeSidebar("business-chapter-sidebar");
+    //sidebar激活样式1
+    // this.$parent.activeSidebar("business-chapter-sidebar");//初始化菜单
   },
   methods: {
   }

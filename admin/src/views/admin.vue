@@ -477,8 +477,24 @@
 export default {
   name: 'login',
   mounted: function () {
+    let _this=this;
     $('body').removeClass('login-layout blur-login');
     $('body').attr('class', 'no-skin');
+
+    //sidebar激活样式
+    _this.activeSidebar(_this.$route.name.replace("/","-")+ "-sidebar");
+  },
+  //通用菜单 监听路由的变化
+  watch: {
+    $route: {
+      handler:function (val,oldVal){
+        console.log("----->页面跳转:",val,oldVal);
+        let _this =this;
+        _this.$nextTick(function (){
+          _this.activeSidebar(_this.$route.name.replace("/","-")+ "-sidebar");
+        })
+      }
+    }
   },
   methods: {
     login(){
