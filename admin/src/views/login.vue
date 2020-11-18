@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     login(){
-      this.$router.push("/admin")
+      this.$router.push("/welcome")//实现登录页面的跳转
     }
   }
 }
