@@ -981,10 +981,20 @@
 export default {
   name: 'chapter',
   mounted: function () {
+    //页面初始化完毕 执行list
+    let _this=this;
+    _this.list();
+
     //sidebar激活样式1
     // this.$parent.activeSidebar("business-chapter-sidebar");//初始化菜单
   },
   methods: {
+    list(){
+      let _this=this;
+      _this.$ajax.get('http://127.0.0.1:9002/business/admin/chapter/list').then((response)=>{
+        console.log("查询大章列表结果:",response)
+      })
+    }
   }
 }
 </script>

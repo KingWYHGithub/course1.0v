@@ -27,14 +27,14 @@ import java.util.List;
  * @date : 2020/11/15 - 3:15
  */
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/admin/chapter")
 public class ChapterController {
 
     @Resource
     private ChapterService ChapterService;
 
-    @RequestMapping("/chapter")
-    public List<ChapterDto> chapter(){
+    @RequestMapping("/list")
+    public List<ChapterDto> list(){
 
         return ChapterService.list();
     }
