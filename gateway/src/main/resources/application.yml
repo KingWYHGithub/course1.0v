@@ -13,7 +13,8 @@ spring:
 #添加一个路由转发 所有带business都转发到9002中去
       routes[1]:
         id: business
-        uri: http://127.0.0.1:9002
+#        uri: http://127.0.0.1:9002
+        uri: lb://business
         predicates[0]:
           name: Path
           args[0]: /business/**
