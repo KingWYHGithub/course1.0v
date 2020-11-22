@@ -1,4 +1,11 @@
 <template>
+  <div>
+    <p>
+  <button v-on:click="list()" class="btn btn-white btn-default btn-round">
+    <i class="ace-icon fa fa-refresh"></i>
+    刷新
+  </button>
+    </p>
   <table id="simple-table" class="table  table-bordered table-hover">
     <thead>
     <tr>
@@ -70,6 +77,7 @@
     </tr>
     </tbody>
   </table>
+  </div>
 </template>
 
 <script>
@@ -90,9 +98,12 @@ export default {
   methods: {
     list() {
       let _this = this;
-      _this.$ajax.get('http://127.0.0.1:9000/business/admin/chapter/list').then((response) => {
+      _this.$ajax.post('http://127.0.0.1:9000/business/admin/chapter/list',{
+        page: 1,
+        size: 1
+      }).then((response) => {
         console.log("查询大章列表结果:", response)
-        _this.chapters = response.data;//得到结果
+        _this.chapters = response.data.list;//得到结果
       })
     }
   }
