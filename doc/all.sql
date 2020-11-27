@@ -13,6 +13,22 @@ insert into `chapter` (id, course_id, name)
 values ('00000001', '00000000', '测试大章01');
 insert into `chapter` (id, course_id, name)
 values ('00000002', '00000000', '测试大章02');
+insert into `chapter` (id, course_id, name)
+values ('00000003', '00000000', '测试大章03');
+insert into `chapter` (id, course_id, name)
+values ('00000004', '00000000', '测试大章04');
+insert into `chapter` (id, course_id, name)
+values ('00000005', '00000000', '测试大章05');
+insert into `chapter` (id, course_id, name)
+values ('00000006', '00000000', '测试大章06');
+insert into `chapter` (id, course_id, name)
+values ('00000007', '00000000', '测试大章07');
+insert into `chapter` (id, course_id, name)
+values ('00000008', '00000000', '测试大章08');
+insert into `chapter` (id, course_id, name)
+values ('00000009', '00000000', '测试大章09');
+insert into `chapter` (id, course_id, name)
+values ('00000010', '00000000', '测试大章10');
 
 
 

@@ -29,8 +29,6 @@ import javax.annotation.Resource;
 @RequestMapping("/admin/chapter")
 public class ChapterController {
 
-
-
     @Resource
     private ChapterService ChapterService;
 
