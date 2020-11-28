@@ -9,7 +9,7 @@
 		<module>gateway</module>
 		<module>server</module>
 		<module>business</module>
-	</modules>
+	</modules><name>course</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -19,7 +19,7 @@
 	<groupId>com.course</groupId>
 	<artifactId>course</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>course</name>
+
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
